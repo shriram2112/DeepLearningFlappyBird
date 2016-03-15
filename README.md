@@ -1,4 +1,4 @@
-# Using Deep Q Networks to Learn How To Play Flappy Bird
+# Using Deep Q-Networks to Learn How To Play Flappy Bird
 
 <img src="./images/flappy_bird_demp.gif" width="250">
 
@@ -20,7 +20,14 @@ cd DeepLearningFlappyBird
 python deep_q_network.py
 ```
 
-## Deep Q Learning Algorithm
+## What is Deep Q-Networks?
+It is a convolutional neural network, trained with a variant of Q-learning, whose input is raw pixels and whose output is a value function estimating future rewards.
+
+For those who is interested in deep reinforcement learning, I highly recommend to read the post linked below:
+
+[Demystifying Deep Reinforcement Learning](http://www.nervanasys.com/demystifying-deep-reinforcement-learning/)
+
+## Deep Q Network Algorithm
 
 The pseudo-code for the Deep Q Learning algorithm, as given in [1], can be found below:
 
@@ -48,7 +55,7 @@ end for
 #### Environment
 Since deep Q-network is trained on the raw pixel values observed from the game screen at each time step, I remove the background that appeared in the original game to make it converge faster. This process can be visualized is the following figure:
 
-<img src="./images/preprocess.png">
+<img src="./images/preprocess.png" width="300">
 
 #### Network Architecture
 According to [1], I first preprocessed the game screens with following steps:
