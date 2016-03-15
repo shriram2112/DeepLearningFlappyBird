@@ -4,6 +4,9 @@
 
 Longer version: [DQN for flappy bird](https://www.youtube.com/watch?v=THhUXIhjkCM)
 
+## Overview
+Our version of the deep q-learning algorithm from The DQN paper. This algorithm reads the screen and the integer score of the Atari 2600 game Space Invaders. The output is the same control commands as a human would have with a controller (albeit, without the physical controller).
+
 ## Background
 
 Reinforcement learning develops control patterns by providing feedback on a model’s selected actions, which encourages the model to select better actions in the future. At each time step, given some state s, the model will select an action s, and then observe the new state s' and a reward r based on some optimality criterion.
@@ -65,11 +68,12 @@ The architecture of the network is described in Figure 1 below. The first layer 
 
 The output layer, obtained with a simple matrix multiplication, has the same dimensionality as the number of valid actions which can be performed in the game, where the 0th index always corresponds to doing nothing. The values at this output layer represent the Q function given the input state for each valid action. At each time step, the network performs whichever action corresponds to the highest Q value using a ϵ greedy policy.
 
-At startup, we initialize all weight matrices randomly using a normal distribution with a standard deviation of 0.01. Bias variables are all initialized at 0.01. We then initialize the replay memory with a max size of 500,000 observations.
+To make it converge faster, I remove the background that appeared in the original game.
 
-We start training by choosing actions uniformly at random for 50,000 time steps, without updating the network weights. This allows us to populate the replay memory before training begins. After that, we linearly anneal ϵ from 1 to 0.1 over the course of the next 500,000 frames. During this time, at each time step, the network samples minibatches of size 100 from the replay memory to train on, and performs a gradient step on the loss function described above using the Adam optimization algorithm with a learning rate of 0.000001. After annealing finishes, the network continues to train indefinitely, with ϵ fixed at 0.1.
+At startup, I initialize all weight matrices randomly using a normal distribution with a standard deviation of 0.01, then set the replay memory with a max size of 500,00 experiences.
 
-An Amazon Web Services G2 large instance was used to efficiently conduct training on a GPU. We implemented the DQN in Google’s newly released TensorFlow library.
+I start training by choosing actions uniformly at random for 10,000 time steps, without updating the network weights. This allows the ner to populate the replay memory before training begins. After that, I linearly anneal ϵ from 0.1 to 0.001 over the course of the next 1000,000 frames. Why I initialize from 0.1 instead of 1 which is suggested in the original paper because flappy bird is very sensitive to the **flap** action. During this time, at each time step, the network samples minibatches of size 32 from the replay memory to train on, and performs a gradient step on the loss function described above using the Adam optimization algorithm with a learning rate of 0.000001. After annealing finishes, the network continues to train indefinitely, with ϵ fixed at 0.001.
+
 
 ## References
 
