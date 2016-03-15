@@ -5,7 +5,7 @@
 Longer version: [DQN for flappy bird](https://www.youtube.com/watch?v=THhUXIhjkCM)
 
 ## Overview
-Our version of the deep q-learning algorithm from The DQN paper. This algorithm reads the screen and the integer score of the Atari 2600 game Space Invaders. The output is the same control commands as a human would have with a controller (albeit, without the physical controller).
+This project follows the description of the Deep Q Learning algorithm described in Playing Atari with Deep Reinforcement Learning, a paper from DeepMind, and shows that this learning algorithm can be further generalized to other games, such as Flappy Bird.
 
 ## Background
 
@@ -77,15 +77,11 @@ I start training by choosing actions uniformly at random for 10,000 time steps, 
 
 ## References
 
-[1] Mnih, Volodymyr, Koray Kavukcuoglu, David Silver, Andrei A. Rusu, Joel Veness, Marc G. Bellemare, Alex Graves, Martin Riedmiller, Andreas K. Fidjeland, Georg Ostrovski, Stig Petersen, Charles Beattie, Amir Sadik, Ioannis Antonoglou, Helen King, Dharshan Kumaran, Daan Wierstra, Shane Legg, and Demis Hassabis. Human-level Control through Deep Reinforcement Learning. Nature, 529-33, 2015.
+[1] Mnih Volodymyr, Koray Kavukcuoglu, David Silver, Andrei A. Rusu, Joel Veness, Marc G. Bellemare, Alex Graves, Martin Riedmiller, Andreas K. Fidjeland, Georg Ostrovski, Stig Petersen, Charles Beattie, Amir Sadik, Ioannis Antonoglou, Helen King, Dharshan Kumaran, Daan Wierstra, Shane Legg, and Demis Hassabis. Human-level Control through Deep Reinforcement Learning. Nature, 529-33, 2015.
 
-[2] Richard Sutton and Andrew Barto. Reinforcement Learning: An Introduction. MIT Press, 1998.
+[2] Volodymyr Mnih, Koray Kavukcuoglu, David Silver, Alex Graves, Ioannis Antonoglou, Daan Wierstra, and Martin Riedmiller. Playing Atari with Deep Reinforcement Learning. NIPS, Deep Learning workshop
 
-[3] Gerald Tesauro. Temporal difference learning and td-gammon. Communications of the ACM, 38(3):58–68, 1995.
-
-[4] Martin Riedmiller. Neural fitted q iteration–first experiences with a data efficient neural reinforcement learning method. In Machine Learning: ECML 2005, pages 317–328. Springer, 2005.
-
-[5] Kevin Chen. [Report](http://cs229.stanford.edu/proj2015/362_report.pdf)
+[3] Kevin Chen. [Report](http://cs229.stanford.edu/proj2015/362_report.pdf)
 
 ## Disclaimer
 This work is highly based on [asrivat1's DeepLearningVideoGames](https://github.com/asrivat1/DeepLearningVideoGames)
