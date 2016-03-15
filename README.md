@@ -79,7 +79,7 @@ I start training by choosing actions uniformly at random for the first 10,000 ti
 Note that unlike [1], which initialize ϵ = 1, I linearly anneal ϵ from 0.1 to 0.001 over the course of the next 1000,000 frames. The reason why I set it this way is that agent can choose an action every 0.03s (FPS=30) in our game, high ϵ will make it **flap** too much and thus keeps itself at the top of the game screen and finally bump the pipe clumsy. This condition will make Q function converge relatively slow since it only start to look other conditions when ϵ is low.
 However, in other games, initialize ϵ to 1 is more reasonable.
 
-During this time, at each time step, the network samples minibatches of size 32 from the replay memory to train on, and performs a gradient step on the loss function described above using the Adam optimization algorithm with a learning rate of 0.000001. After annealing finishes, the network continues to train indefinitely, with ϵ fixed at 0.001.
+During training time, at each time step, the network samples minibatches of size 32 from the replay memory to train on, and performs a gradient step on the loss function described above using the Adam optimization algorithm with a learning rate of 0.000001. After annealing finishes, the network continues to train indefinitely, with ϵ fixed at 0.001.
 
 
 ## References
