@@ -22,7 +22,7 @@ python deep_q_network.py
 
 ## Deep Q Learning Algorithm
 
-The pseudo-code for the Deep Q Learning algorithm, as given in [1], can be found below:
+The pseudo-code for the Deep Q Learning algorithm, as given in **[1]**, can be found below:
 
 ```
 Initialize replay memory D to size N
