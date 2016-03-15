@@ -23,7 +23,7 @@ python deep_q_network.py
 ## What is Deep Q-Networks?
 It is a convolutional neural network, trained with a variant of Q-learning, whose input is raw pixels and whose output is a value function estimating future rewards.
 
-For those who is interested in deep reinforcement learning, I highly recommend to read the post linked below:
+For those who are interested in deep reinforcement learning, I highly recommend to read the post linked below:
 
 [Demystifying Deep Reinforcement Learning](http://www.nervanasys.com/demystifying-deep-reinforcement-learning/)
 
