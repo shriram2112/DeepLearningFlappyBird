@@ -14,9 +14,11 @@ This project follows the description of the Deep Q Learning algorithm described 
 * OpenCV-Python
 
 ## How to Run?
-1. `git clone git@github.com:yenchenlin1994/DeepLearningFlappyBird.git`
-2. `cd DeepLearningFlappyBird`
-3. `python deep_q_network.py`
+```
+git clone git@github.com:yenchenlin1994/DeepLearningFlappyBird.git
+`cd DeepLearningFlappyBird`
+`python deep_q_network.py`
+```
 
 ## Background
 
