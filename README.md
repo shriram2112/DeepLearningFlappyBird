@@ -7,6 +7,12 @@ Longer version: [DQN for flappy bird](https://www.youtube.com/watch?v=THhUXIhjkC
 ## Overview
 This project follows the description of the Deep Q Learning algorithm described in Playing Atari with Deep Reinforcement Learning [2] and shows that this learning algorithm can be further generalized to the notorious Flappy Bird.
 
+## Installation Dependencies:
+* Python 2.7
+* TensorFlow
+* pygame
+* OpenCV-Python
+
 ## Background
 
 Reinforcement learning develops control patterns by providing feedback on a model’s selected actions, which encourages the model to select better actions in the future. At each time step, given some state s, the model will select an action s, and then observe the new state s' and a reward r based on some optimality criterion.
