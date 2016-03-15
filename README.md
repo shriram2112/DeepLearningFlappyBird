@@ -20,34 +20,6 @@ cd DeepLearningFlappyBird
 python deep_q_network.py
 ```
 
-## Background
-
-Reinforcement learning develops control patterns by providing feedback on a model’s selected actions, which encourages the model to select better actions in the future. At each time step, given some state s, the model will select an action s, and then observe the new state s' and a reward r based on some optimality criterion.
-
-We specifically used a method known as Q learning, which approximates the maximum expected return for performing an action at a given state using an action-value (Q) function. Specifically, return gives the sum of the rewards until the game terminates, where the reward is discounted by a factor of γ at each time step. We formally define this as:
-
-![alt-text](http://imgur.com/h7MJxSJ.png "(1)")
-
-We then define the action-value function:
-
-![alt-text](http://imgur.com/05MxGxk.png "(2)")
-
-Note that if the optimal Q function is known for state s', we can write the optimal Q function at preceding state s as the maximum expected value of ![alt-text](http://imgur.com/1RSOCHo.png "Sorry, no alt-text for this one"). This identity is known as the Bellman equation:
-
-![alt-text](http://imgur.com/BERyjr2.png "(3)")
-
-The intuition behind reinforcement learning is to continually update the action-value function based on observations using the Bellman equation. It has been shown by Sutton et al 1998 [2] that such update algorithms will converge on the optimal action-value function as time approaches infinity. Based on this, we can define Q as the output of a neural network, which has weights θ, and train this network by minimizing the following loss function at each iteration i:
-
-![alt-text](http://imgur.com/3gFka35.png "(4)")
-
-Where y_i represents the target function we want to approach during each iteration. It is defined as:
-
-![alt-text](http://imgur.com/gKcXJfi.png "(5)")
-
-Note that when i is equal to the final iteration of an episode (colloquially the end of a game), the Q function should be 0 since it is impossible to attain additional reward after the game has ended. Therefore, when i equals the terminal frame of an episode, we can simply write:
-
-![alt-text](http://imgur.com/nU8qRJM.png "(6)")
-
 ## Deep Q Learning Algorithm
 
 The pseudo-code for the Deep Q Learning algorithm, as given in [1], can be found below:
