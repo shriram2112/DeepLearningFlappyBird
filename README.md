@@ -1,9 +1,8 @@
 # Using Deep Q Networks to Learn How To Play Flappy Bird
 
-Demo video: [DQN for flappy bird](https://www.youtube.com/watch?v=THhUXIhjkCM)
+<img src="./flappy_bird_demp.gif" width="250">
 
-## Disclaimer
-This work is highly based on [asrivat1's DeepLearningVideoGames](https://github.com/asrivat1/DeepLearningVideoGames)
+Longer version: [DQN for flappy bird](https://www.youtube.com/watch?v=THhUXIhjkCM)
 
 ## Background
 
@@ -83,6 +82,9 @@ An Amazon Web Services G2 large instance was used to efficiently conduct trainin
 [4] Martin Riedmiller. Neural fitted q iteration–first experiences with a data efficient neural reinforcement learning method. In Machine Learning: ECML 2005, pages 317–328. Springer, 2005.
 
 [5] Kevin Chen. [Report](http://cs229.stanford.edu/proj2015/362_report.pdf)
+
+## Disclaimer
+This work is highly based on [asrivat1's DeepLearningVideoGames](https://github.com/asrivat1/DeepLearningVideoGames)
 
 
 
