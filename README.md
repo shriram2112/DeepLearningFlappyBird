@@ -124,5 +124,7 @@ Ultimately, the results obtained here demonstrate the usefulness of convolutiona
 
 [4] Martin Riedmiller. Neural fitted q iteration–first experiences with a data efficient neural reinforcement learning method. In Machine Learning: ECML 2005, pages 317–328. Springer, 2005.
 
+[5] Kevin Chen, [Report](http://cs229.stanford.edu/proj2015/362_report.pdf)
+
 
 
