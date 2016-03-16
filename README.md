@@ -20,14 +20,14 @@ cd DeepLearningFlappyBird
 python deep_q_network.py
 ```
 
-## What is Deep Q-Networks?
+## What is Deep Q-Network?
 It is a convolutional neural network, trained with a variant of Q-learning, whose input is raw pixels and whose output is a value function estimating future rewards.
 
 For those who are interested in deep reinforcement learning, I highly recommend to read the following post:
 
 [Demystifying Deep Reinforcement Learning](http://www.nervanasys.com/demystifying-deep-reinforcement-learning/)
 
-## Deep Q Network Algorithm
+## Deep Q-Network Algorithm
 
 The pseudo-code for the Deep Q Learning algorithm, as given in [1], can be found below:
 
