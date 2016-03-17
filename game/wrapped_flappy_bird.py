@@ -85,7 +85,7 @@ class GameState:
 
         # playerIndex basex change
         if (self.loopIter + 1) % 3 == 0:
-            self.playerIndex = PLAYER_INDEX_GEN.next()
+            self.playerIndex = next(PLAYER_INDEX_GEN)
         self.loopIter = (self.loopIter + 1) % 30
         self.basex = -((-self.basex + 100) % self.baseShift)
 
