@@ -133,9 +133,9 @@ def trainNetwork(s, readout, h_fc1, sess):
             epsilon -= (INITIAL_EPSILON - FINAL_EPSILON) / EXPLORE
 
         # run the selected action and observe next state and reward
-        x_t1_col, r_t, terminal = game_state.frame_step(a_t)
-        x_t1 = cv2.cvtColor(cv2.resize(x_t1_col, (80, 80)), cv2.COLOR_BGR2GRAY)
-        ret, x_t1 = cv2.threshold(x_t1,1,255,cv2.THRESH_BINARY)
+        x_t1_colored, r_t, terminal = game_state.frame_step(a_t)
+        x_t1 = cv2.cvtColor(cv2.resize(x_t1_colored, (80, 80)), cv2.COLOR_BGR2GRAY)
+        ret, x_t1 = cv2.threshold(x_t1, 1, 255, cv2.THRESH_BINARY)
         x_t1 = np.reshape(x_t1, (80, 80, 1))
         s_t1 = np.append(x_t1, s_t[:,:,1:], axis = 2)
 
@@ -158,8 +158,9 @@ def trainNetwork(s, readout, h_fc1, sess):
             y_batch = []
             readout_j1_batch = readout.eval(feed_dict = {s : s_j1_batch})
             for i in range(0, len(minibatch)):
+                terminal = minibatch[i][4]
                 # if terminal, only equals reward
-                if minibatch[i][4]:
+                if terminal:
                     y_batch.append(r_batch[i])
                 else:
                     y_batch.append(r_batch[i] + GAMMA * np.max(readout_j1_batch[i]))
@@ -168,7 +169,8 @@ def trainNetwork(s, readout, h_fc1, sess):
             train_step.run(feed_dict = {
                 y : y_batch,
                 a : a_batch,
-                s : s_j_batch})
+                s : s_j_batch}
+            )
 
         # update the old values
         s_t = s_t1
