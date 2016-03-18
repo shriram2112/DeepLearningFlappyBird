@@ -9,7 +9,7 @@ This project follows the description of the Deep Q Learning algorithm described 
 
 ## Installation Dependencies:
 * Python 2.7
-* TensorFlow
+* TensorFlow 0.7
 * pygame
 * OpenCV-Python
 
