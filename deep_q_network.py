@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+from __future__ import print_function
 
 import tensorflow as tf
 import cv2
@@ -106,9 +107,9 @@ def trainNetwork(s, readout, h_fc1, sess):
     checkpoint = tf.train.get_checkpoint_state("saved_networks")
     if checkpoint and checkpoint.model_checkpoint_path:
         saver.restore(sess, checkpoint.model_checkpoint_path)
-        print "Successfully loaded:", checkpoint.model_checkpoint_path
+        print("Successfully loaded:", checkpoint.model_checkpoint_path)
     else:
-        print "Could not find old network weights"
+        print("Could not find old network weights")
 
     epsilon = INITIAL_EPSILON
     t = 0
@@ -119,7 +120,7 @@ def trainNetwork(s, readout, h_fc1, sess):
         action_index = 0
         if t % FRAME_PER_ACTION == 0:
             if random.random() <= epsilon:
-                print "----------Random Action----------"
+                print("----------Random Action----------")
                 action_index = random.randrange(ACTIONS)
                 a_t[random.randrange(ACTIONS)] = 1
             else:
@@ -189,9 +190,9 @@ def trainNetwork(s, readout, h_fc1, sess):
         else:
             state = "train"
 
-        print "TIMESTEP", t, "/ STATE", state, \
+        print("TIMESTEP", t, "/ STATE", state, \
             "/ EPSILON", epsilon, "/ ACTION", action_index, "/ REWARD", r_t, \
-            "/ Q_MAX %e" % np.max(readout_t)
+            "/ Q_MAX %e" % np.max(readout_t))
         # write info to files
         '''
         if t % 10000 <= 100:
