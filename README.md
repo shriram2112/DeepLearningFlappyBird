@@ -81,7 +81,14 @@ However, in other games, initialize ϵ to 1 is more reasonable.
 
 During training time, at each time step, the network samples minibatches of size 32 from the replay memory to train on, and performs a gradient step on the loss function described above using the Adam optimization algorithm with a learning rate of 0.000001. After annealing finishes, the network continues to train indefinitely, with ϵ fixed at 0.001.
 
-## How to reproduce?
+## FAQ
+
+#### Checkpoint not found
+Change [first line of `saved_networks/checkpoint`](https://github.com/yenchenlin1994/DeepLearningFlappyBird/blob/master/saved_networks/checkpoint#L1) to 
+
+`model_checkpoint_path: "saved_networks/bird-dqn-2920000"`
+
+#### How to reproduce?
 1. Comment out [these lines](https://github.com/yenchenlin1994/DeepLearningFlappyBird/blob/master/deep_q_network.py#L108-L112)
 
 2. Modify `deep_q_network.py`'s parameter as follow:
