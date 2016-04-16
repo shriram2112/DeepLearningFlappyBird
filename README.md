@@ -53,7 +53,7 @@ end for
 ## Experiments
 
 #### Environment
-Since deep Q-network is trained on the raw pixel values observed from the game screen at each time step, I remove the background that appeared in the original game to make it converge faster. This process can be visualized as the following figure:
+Since deep Q-network is trained on the raw pixel values observed from the game screen at each time step, [3] finds that remove the background appeared in the original game can make it converge faster. This process can be visualized as the following figure:
 
 <img src="./images/preprocess.png" width="450">
 
