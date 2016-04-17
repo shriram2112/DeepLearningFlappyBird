@@ -105,7 +105,7 @@ INITIAL_EPSILON = 0.1
 
 [2] Volodymyr Mnih, Koray Kavukcuoglu, David Silver, Alex Graves, Ioannis Antonoglou, Daan Wierstra, and Martin Riedmiller. **Playing Atari with Deep Reinforcement Learning**. NIPS, Deep Learning workshop
 
-[3] Kevin Chen. [Report](http://cs229.stanford.edu/proj2015/362_report.pdf)
+[3] Kevin Chen. [Deep Reinforcement Learning for Flappy Bird](http://cs229.stanford.edu/proj2015/362_report.pdf) [youtube result](https://youtu.be/9WKBzTUsPKc)
 
 ## Disclaimer
 This work is highly based on the following repos:
