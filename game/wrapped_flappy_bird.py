@@ -29,7 +29,7 @@ BACKGROUND_WIDTH = IMAGES['background'].get_width()
 PLAYER_INDEX_GEN = cycle([0, 1, 2, 1])
 
 
-class GameState:
+class Env:
     def __init__(self):
         self.score = self.playerIndex = self.loopIter = 0
         self.playerx = int(SCREENWIDTH * 0.2)
@@ -57,18 +57,18 @@ class GameState:
         self.playerFlapAcc =  -9   # players speed on flapping
         self.playerFlapped = False # True when player flaps
 
-    def frame_step(self, input_actions):
+    def step(self, input_action):
         pygame.event.pump()
 
         reward = 0.1
         terminal = False
 
-        if sum(input_actions) != 1:
+        if input_action > 1 or input_action < 0:
             raise ValueError('Multiple input actions!')
 
-        # input_actions[0] == 1: do nothing
-        # input_actions[1] == 1: flap the bird
-        if input_actions[1] == 1:
+        # input_action == 0: do nothing
+        # input_action == 1: flap the bird
+        if input_action == 1:
             if self.playery > -2 * PLAYER_HEIGHT:
                 self.playerVelY = self.playerFlapAcc
                 self.playerFlapped = True
